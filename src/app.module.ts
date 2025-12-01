@@ -11,6 +11,8 @@ import { User } from './user/entities/user.entity';
 import { UserRole } from './user/entities/user-role.entity';
 import { CategoryModule } from './category/category.module';
 import { Category } from './category/entities/category.entity';
+import { CourseModule } from './course/course.module';
+import { Course } from './course/entities/course.entity';
 
 @Module({
   imports: [
@@ -25,12 +27,13 @@ import { Category } from './category/entities/category.entity';
       password: '12345',
       database: 'edu_platform_db',
       synchronize: true,
-      entities: [Role, User, UserRole, Category],
+      entities: [Role, User, UserRole, Category, Course],
     }),
     UserModule,
     RoleModule,
     AuthModule,
     CategoryModule,
+    CourseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
